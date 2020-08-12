@@ -1,5 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const receitas = require('./data')
 
 const server = express();
 
@@ -14,10 +15,26 @@ nunjucks.configure("views", {
 
 // Rotas
 
-server.get("/", function(req, res) {
+server.get("/", function (req, res) {
     return res.render('index');
 });
 
-server.listen(5000, function (){
+server.get("/detalhes", function (req, res) {
+    const id = req.query.id;
+
+    const receita = receitas.find(function (receita) {
+        if (receita.id == id) {
+            return true;
+        }
+    });
+
+    if (!receita) {
+        return res.send("receita não encontrada");
+    }
+
+    return res.render("detalhes", { receita });
+});
+
+server.listen(5000, function () {
     console.log('server is running!!!');
 });
