@@ -8,33 +8,33 @@
     <body>
         <div class="content">
             <header>
-                <img src="/assets/logo.png" alt="Logo Foodfy">
-                <a href="">Sobre</a>
-                <a href="">Receitas</a>
+                <img src="https://i.imgur.com/7ICOkXm.png" alt="Logo Foodfy">
+                <a href="/about">Sobre</a>
+                <a href="/receitas">Receitas</a>
             </header>
             <div class="banner">
                 <div class="texto-banner">
                     <h1>As melhores receitas</h1>
                     <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
                 </div>
-                <img src="/assets/chef.png" alt="Chefe Foodfy">
+                <img src="https://i.imgur.com/ASElwVm.png" alt="Chefe Foodfy">
             </div>
             <section>
                 <h1>Mais acessadas</h1>
-
                 <div class="cards">
-                    <!-- card 1 -->
-                    <div class="card" id="">
-                        <div class="img-card">
-                            <img src="/assets/burger.png">
+                    {% for receitas in receita %}
+                        <div class="card" id="">
+                            <div class="img-card">
+                                <img src="{{ receitas.img }}">
+                            </div>
+                            <div class="receita-card">
+                                <p>{{ receitas.author }}</p>
+                            </div>
+                            <div class="chef-card">
+                                <p>{{ receitas.title }}</p>
+                            </div>
                         </div>
-                        <div class="receita-card">
-                            <p>asdsad</p>
-                        </div>
-                        <div class="chef-card">
-                            <p>sadasd</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </section>
         </div>

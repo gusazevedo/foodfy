@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/styles.css">
+        <title>Receitas - Foodfy</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <header>
+                <img src="https://i.imgur.com/7ICOkXm.png" alt="Logo Foodfy">
+                <a href="/">Home</a>
+                <a href="/about">Sobre</a>
+            </header>
+            <section>
+                 <h1>Todas as receitas</h1>
+                <div class="cards">
+            {% for receitas in receita %}
+                    <div class="card" id="">
+                        <div class="img-card">
+                            <img src="{{ receitas.img }}">
+                        </div>
+                        <div class="receita-card">
+                            <p>{{ receitas.author }}</p>
+                        </div>
+                        <div class="chef-card">
+                            <p>{{ receitas.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>Todos os direitos reservados a @Foodfy</p>
+        </footer>
+    </body>
+</html>

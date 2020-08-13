@@ -66,10 +66,23 @@ section {
 	max-width: 940px;
 	margin: 40px auto;
 }
+
 section h1 {
 	font-size: 24px;
 	margin-bottom: 20px;
 	color: #333;
+}
+
+section h2 {
+  margin: 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+section p {
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
 }
 
 .cards {
@@ -79,19 +92,20 @@ section h1 {
 	gap: 20px;
 }
 
+.receita-card p {
+  font-size: 18px;
+  color: #111111;
+  padding-top: 5px;
+}
+
+.chef-card p {
+  font-size: 14px;
+  color: #777777;
+}
+
 .card .img-card img {
 	width: 100%;
 	border-radius: 15px;
-}
-
-.receita-card {
-	padding-top: 10px;
-	font-size: 18px;
-}
-.chef-card {
-	font-size: 14px;
-  opacity: 70%;
-  padding: 5px 0px;
 }
 
 footer {

@@ -16,23 +16,31 @@ nunjucks.configure("views", {
 // Rotas
 
 server.get("/", function (req, res) {
-    return res.render('index');
+    const receita = receitas;
+    return res.render('index', { receita });
+});
+
+server.get("/about", function(req, res) {
+    return res.render('about');
+})
+
+server.get("/receitas", function(req, res) {
+    const receita = receitas;
+    return res.render('receitas' , { receita });
 });
 
 server.get("/detalhes", function (req, res) {
     const id = req.query.id;
-
     const receita = receitas.find(function (receita) {
         if (receita.id == id) {
             return true;
         }
     });
-
     if (!receita) {
         return res.send("receita não encontrada");
     }
 
-    return res.render("detalhes", { receita });
+    return res.render('detalhes', { receita });
 });
 
 server.listen(5000, function () {
